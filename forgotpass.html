@@ -1,0 +1,52 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ForgotPass</title>
+    <link rel="stylesheet" href="/style/signin.css">
+    <link rel="icon" href="/icons/logo-home-png-7435.png">
+</head>
+<body>
+    <div class="container">
+        <div class="form-box">
+          <h1 id="title">Forgot Password</h1>
+          <form action="" id="signinform">
+            <div class="input-group">
+              <div class="input-field">
+                <i class="fa-solid fa-envelope"></i>
+                <input type="email" placeholder="Email" required  id="email">
+              </div>
+              <p>Already have account?<a href="/signin.html">SignIn</a></p>
+              <p><a href="/index.html">Home</a></p>
+            </div>
+            <div class="btn-field">
+              <button type="button" id="signinbtn" onclick="click_function()">SignIn</button>
+            </div>
+          </form>
+          <div class="terms-condition">
+            <a href="terms-privacy.html" class="term">Terms</a>
+            <a href="terms-privacy.html" class="term">Privacy</a>
+            <a href="mailto:vishalkumar32047@gmail.com" class="term">Contact</a>
+          </div>
+        </div>
+        <script>
+            function click_function(){
+            var e= document.getElementById('email').value;
+            var letters = /^[A-Za-z\s]+$/;
+            var email_letters = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+            var password_letters =/^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/;
+            if(e==''){
+                alert('Enter the email');
+            }else if(!email_letters.test(e)){
+                alert('Enter valid email');
+            }
+            else{
+                alert("Check your email."); 
+            }
+            document.getElementById('signinform').reset();
+            windows.location.href = "";
+        }
+          </script>
+</body>
+</html>
